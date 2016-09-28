@@ -1,0 +1,10 @@
+{
+    apps: [{
+        name: 'dev',
+        script: 'bin/www',
+        watch: '../',
+        env: {
+            'NODE_ENV': 'development'
+        }
+    }]
+}
