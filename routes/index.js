@@ -7,7 +7,11 @@ var db = new cassandra.Client({
 });
 
 db.connect(function(err, result) {
-    console.log('cassandra connected');
+    if (err) {
+        console.log('cassandra err');
+    } else {
+        console.log('cassandra connected');
+    }
 });
 
 var getAllNamesQuery = 'SELECT * FROM ceandb.names';
@@ -26,7 +30,7 @@ router.get('/', function (req, res, next) {
             });
         }
     });
-    console.log('tttest')
 });
 
 module.exports = router;
+
